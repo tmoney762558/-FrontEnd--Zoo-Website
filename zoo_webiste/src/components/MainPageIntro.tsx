@@ -4,13 +4,14 @@ import NavBar from "./NavBar";
 import lionVideo from "../assets/lionVideo.mp4";
 import giraffeVideo from "../assets/giraffeVideo.mp4";
 import bearVideo from "../assets/bearVideo.mp4";
+import clawMarks from "../assets/clawMarks.png";
 
 const MainPageIntro = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
 
   return (
-    <div>
-      <div className="w-full relative h-[90vh]">
+    <section>
+      <div className="relative w-full h-fit">
         {/* Dark Overlay */}
         <NavBar></NavBar>
         <div
@@ -19,7 +20,7 @@ const MainPageIntro = () => {
         ></div>
         {currentVideo === 0 ? (
           <video
-            className="w-full h-full object-cover"
+            className="w-full h-[50rem] object-cover"
             key={currentVideo}
             autoPlay
             muted
@@ -35,7 +36,7 @@ const MainPageIntro = () => {
           </video>
         ) : currentVideo === 1 ? (
           <video
-            className="w-full h-full object-cover"
+            className="w-full h-[50rem] object-cover"
             key={currentVideo}
             autoPlay
             muted
@@ -51,7 +52,7 @@ const MainPageIntro = () => {
           </video>
         ) : (
           <video
-            className="w-full h-full object-cover"
+            className="w-full h-[50rem] object-cover"
             key={currentVideo}
             autoPlay
             muted
@@ -67,20 +68,28 @@ const MainPageIntro = () => {
           </video>
         )}
       </div>
-      <div className="flex justify-center items-center absolute inset-0 w-full h-full text-white z-10">
-        <div className="w-full md:mb-0 mb-[15rem] lg:px-10 md:px-5 px-1 md:text-left text-center">
-          <p className="xl:text-[8rem] lg:text-[7.5rem] md:text-[6rem] sm:text-[5rem] text-[2.8rem] font-bold oswald">
+      <div className="flex justify-center items-center absolute inset-0 w-full h-[50rem] text-white z-10">
+        <div className="w-full md:mb-0 mb-[15rem] lg:px-10 md:px-5 px-1 lg:text-left text-center">
+          <p className="xl:text-[6.5rem] lg:text-[5.5rem] md:text-[4.5rem] sm:text-[3.5rem] text-[2.5rem] font-bold oswald slide-in-blurred-top">
             ADVENTURES SHOULD BE UNFORGETTABLE.
           </p>
-          <p className="xl:text-[4.5rem] lg:text-[4rem] md:text-[3rem] sm:text-[2.5rem] text-[1.7rem] text-green-200 font-bold oswald">
-            <i>Unleash your wild side.</i>
+          <p className="xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] sm:text-[2rem] text-[1.5rem] text-red-400 font-bold oswald slide-in-blurred-top">
+            Unleash your{" "}
+            <span className="inline-flex justify-center items-center relative">
+              <p>wild</p>
+              <img
+                className="absolute w-[10rem] aspect-square z-10"
+                src={clawMarks}
+              ></img>
+            </span>{" "}
+            side.
           </p>
-          <button className="mt-[3rem] lg:py-3 md:py-2 py-1 lg:px-10 md:px-7 px-5 hover:bg-white border-2 border-white rounded-full text-white hover:text-black font-bold cursor-pointer">
+          <button className="mt-[3rem] lg:py-3 md:py-2 py-1 lg:px-10 md:px-7 px-5 hover:bg-white border-2 border-white rounded-full text-white hover:text-black font-bold oswald cursor-pointer">
             <a href="#about">About Us</a>
           </button>
         </div>
       </div>
-      <div className="relative w-full h-[10vh] bg-red-400 z-10">
+      <div className="relative w-full h-[3rem] bg-green-500 z-10">
         <div className="flex justify-center absolute top-[-1.3rem] w-full ">
           <div className="flex justify-center items-center w-10 aspect-square bg-slate-700 rounded-full">
             <a href="#about">
@@ -89,7 +98,7 @@ const MainPageIntro = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
