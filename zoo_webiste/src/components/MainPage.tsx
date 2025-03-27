@@ -1,8 +1,13 @@
+import AboutUs from "./AboutUs";
+import MainPageIntro from "./MainPageIntro";
 
 const MainPage = () => {
   return (
-    <div className="w-full min-h-screen bg-black"></div>
-  )
-}
+    <div>
+      <MainPageIntro></MainPageIntro>
+      <AboutUs></AboutUs>
+    </div>
+  );
+};
 
-export default MainPage
+export default MainPage;
