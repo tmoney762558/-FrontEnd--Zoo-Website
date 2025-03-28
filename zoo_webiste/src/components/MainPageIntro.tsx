@@ -20,7 +20,7 @@ const MainPageIntro = () => {
         ></div>
         {currentVideo === 0 ? (
           <video
-            className="w-full h-[50rem] object-cover"
+            className="w-full min-h-[96vh] h-[50rem] object-cover"
             key={currentVideo}
             autoPlay
             muted
@@ -36,7 +36,7 @@ const MainPageIntro = () => {
           </video>
         ) : currentVideo === 1 ? (
           <video
-            className="w-full h-[50rem] object-cover"
+            className="w-full min-h-[96vh] h-[50rem] object-cover"
             key={currentVideo}
             autoPlay
             muted
@@ -52,7 +52,7 @@ const MainPageIntro = () => {
           </video>
         ) : (
           <video
-            className="w-full h-[50rem] object-cover"
+            className="w-full min-h-[96vh] h-[50rem] object-cover"
             key={currentVideo}
             autoPlay
             muted
@@ -76,7 +76,7 @@ const MainPageIntro = () => {
           <p className="xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] sm:text-[2rem] text-[1.5rem] text-red-400 font-bold oswald slide-in-blurred-top">
             Unleash your{" "}
             <span className="inline-flex justify-center items-center relative">
-              <p>wild</p>
+              wild
               <img
                 className="absolute w-[10rem] aspect-square z-10"
                 src={clawMarks}
@@ -89,13 +89,13 @@ const MainPageIntro = () => {
           </button>
         </div>
       </div>
-      <div className="relative w-full h-[3rem] bg-green-500 z-10">
-        <div className="flex justify-center absolute top-[-1.3rem] w-full ">
-          <div className="flex justify-center items-center w-10 aspect-square bg-slate-700 rounded-full">
-            <a href="#about">
+      <div className="relative w-full h-[3rem] bg-red-500 z-20">
+        <div className="flex justify-center absolute top-[-1.3rem] w-full">
+          <a className="cursor-pointer" href="#about">
+            <div className="flex justify-center items-center w-10 aspect-square bg-slate-700 rounded-full">
               <FaArrowDown fontSize={"1.3rem"} fill="white"></FaArrowDown>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
