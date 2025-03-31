@@ -2,12 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import lionPawPrint from "../assets/lionPawPrint.png";
 
 const AboutUs = () => {
-  const [scrollPos, setScrollPos] = useState(window.scrollY);
+
+  const [animateElement, setAnimateElement] = useState(false);
   const aboutUsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollPos(window.scrollY);
+      const scrollPos = window.scrollY;
+      if (
+        !animateElement &&
+        aboutUsRef.current &&
+        scrollPos > aboutUsRef.current.offsetTop + window.innerHeight * 0.5
+      ) {
+        setAnimateElement(true);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -17,21 +25,16 @@ const AboutUs = () => {
     };
   }, []);
   return (
-    <section className="flex flex-col justify-center items-center relative w-full min-h-[60rem] lg:px-10 md:px-5 px-1 bg-red-400 z-10">
+    <section id="about" className="flex flex-col justify-center items-center relative w-full min-h-[60rem] lg:px-10 md:px-5 px-1 bg-red-400 z-10">
       <img className="absolute w-1/2 max-w-[30rem]" src={lionPawPrint}></img>
       <div
-        className={`flex flex-col items-center w-full z-10 ${
-          aboutUsRef.current &&
-          scrollPos > aboutUsRef.current.offsetTop - window.innerHeight
-            ? "slide-in-blurred-top-scroll"
-            : ""
-        }`}
+        
+        className={`${
+          animateElement ? "flex slide-in-blurred-top-scroll" : "hidden"
+        } flex-col items-center w-full z-10 `}
         ref={aboutUsRef}
       >
-        <h2
-          id="about"
-          className="border-b-2 border-white text-center lg:text-[5rem] md:text-[4rem] text-[3rem] text-white oswald font-bold"
-        >
+        <h2 className="border-b-2 border-white text-center lg:text-[5rem] md:text-[4rem] text-[3rem] text-white oswald font-bold">
           About Us
         </h2>
         <p className="w-full max-w-[50rem] mt-[1.3rem] text-center lg:text-[1.7rem] md:text-[1.45rem] text-[1.2rem] text-white oswald">

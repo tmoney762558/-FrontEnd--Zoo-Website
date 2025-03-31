@@ -8,12 +8,19 @@ import { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const ZooExhibits = () => {
-  const [scrollPos, setScrollPos] = useState(window.scrollY);
+  const [animateElement, setAnimateElement] = useState(false);
   const exhibitRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollPos(window.scrollY);
+      const scrollPos = window.scrollY;
+      if (
+        !animateElement &&
+        exhibitRef.current &&
+        scrollPos > exhibitRef.current.offsetTop - window.innerHeight / 2
+      ) {
+        setAnimateElement(true);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,12 +33,9 @@ const ZooExhibits = () => {
   return (
     <section className="flex flex-col items-center w-full h-[80rem] bg-neutral-900 text-xl">
       <div
-        className={`flex items-center gap-3 relative w-full h-full overflow-x-auto  ${
-          exhibitRef.current &&
-          scrollPos > exhibitRef.current.offsetTop - window.innerHeight
-            ? "slide-in-right-scroll"
-            : ""
-        }`}
+        className={`${
+          animateElement ? "flex slide-in-right-scroll" : "invisible"
+        } items-center gap-3 relative w-2/3 max-w-fit h-full overflow-x-auto`}
         ref={exhibitRef}
       >
         <a
@@ -49,10 +53,7 @@ const ZooExhibits = () => {
             </p>
           </div>
           <div className="absolute bottom-5 left-5 p-1 bg-neutral-800 rounded-full">
-            <FaArrowRight
-              fontSize={"1.5rem"}
-              fill="white"
-            ></FaArrowRight>
+            <FaArrowRight fontSize={"1.5rem"} fill="white"></FaArrowRight>
           </div>
         </a>
         <a

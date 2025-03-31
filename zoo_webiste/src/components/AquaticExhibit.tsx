@@ -1,9 +1,10 @@
 import sharkImage from "../assets/sharkImage.jpg"
+
 const AquaticExhibit = () => {
   return (
-    <section className="">
+    <section id="aquatic" className="">
       <div className="w-full h-3 bg-black"></div>
-      <div id="aquatic" className="flex lg:flex-row flex-col-reverse justify-center items-center gap-[5rem] relative w-full min-h-[60rem] lg:px-10 md:px-5 px-1 bg-blue-500 z-10">
+      <div  className="flex lg:flex-row flex-col-reverse justify-center items-center gap-[5rem] relative w-full lg:h-[60rem] h-[75rem] lg:px-10 md:px-5 px-1 bg-blue-500 z-10">
         <div className="flex flex-col items-center">
           <h2 className="w-full lg:text-left text-center lg:text-[5rem] md:text-[4rem] text-[3rem] text-black oswald font-bold">
             Aquatic Exhibit

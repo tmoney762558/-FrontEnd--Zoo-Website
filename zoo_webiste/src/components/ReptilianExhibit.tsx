@@ -5,7 +5,7 @@ const ReptilianExhibit = () => {
       <div className="w-full h-3 bg-black"></div>
       <div
         id="reptilian"
-        className="flex lg:flex-row flex-col justify-center items-center gap-[5rem] relative w-full min-h-[60rem] lg:px-10 md:px-5 px-1 bg-green-700 z-10"
+        className="flex lg:flex-row flex-col justify-center items-center gap-[5rem] relative w-full lg:h-[60rem] h-[75rem] lg:px-10 md:px-5 px-1 bg-green-700 z-10"
       >
         <img className="lg:w-1/2 w-full aspect-square max-w-[50rem] object-cover rounded-full" src={crocodileImage}></img>
         <div className="flex flex-col items-center">

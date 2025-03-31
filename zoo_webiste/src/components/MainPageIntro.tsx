@@ -89,13 +89,11 @@ const MainPageIntro = () => {
           </button>
         </div>
       </div>
-      <div className="relative w-full h-[3rem] bg-red-500 z-20">
+      <div className="relative w-full h-[3rem] bg-red-500 z-50">
         <div className="flex justify-center absolute top-[-1.3rem] w-full">
-          <a className="cursor-pointer" href="#about">
-            <div className="flex justify-center items-center w-10 aspect-square bg-slate-700 rounded-full">
-              <FaArrowDown fontSize={"1.3rem"} fill="white"></FaArrowDown>
-            </div>
-          </a>
+          <div className="flex justify-center items-center w-10 aspect-square bg-slate-700 rounded-full">
+            <FaArrowDown fontSize={"1.3rem"} fill="white"></FaArrowDown>
+          </div>
         </div>
       </div>
     </section>
