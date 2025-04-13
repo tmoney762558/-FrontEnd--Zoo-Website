@@ -1,11 +1,11 @@
 import africanExhibit from "../assets/africanExhibit.jpg";
+import slideIndicator from "../assets/slideIndicator.gif";
 import primateExhibit from "../assets/primateExhibit.jpeg";
 import reptileExhibit from "../assets/reptileExhibit.jpeg";
 import aquaticExhibit from "../assets/aquaticExhibit.jpeg";
-import woodsExhibit from "../assets/woodsExhibit.jpeg";
-import northernExhibit from "../assets/northernExhibit.jpeg";
+import woodsExhibit from "../assets/wildernessExhibit.jpg";
+import northernExhibit from "../assets/northernExhibit.avif";
 import { useEffect, useRef, useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 const ZooExhibits = () => {
   const [animateElement, setAnimateElement] = useState(false);
@@ -28,14 +28,15 @@ const ZooExhibits = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <section className="flex flex-col items-center w-full h-[80rem] bg-neutral-900 text-xl">
+    <section className="flex flex-col justify-center items-center w-full h-[80rem] bg-neutral-900 text-xl">
       <div
         className={`${
           animateElement ? "flex slide-in-right-scroll" : "invisible"
-        } items-center gap-3 relative w-2/3 max-w-fit h-full overflow-x-auto`}
+        } items-center gap-3 relative w-[90%] max-w-fit h-fit overflow-x-auto`}
         ref={exhibitRef}
       >
         <a
@@ -46,14 +47,17 @@ const ZooExhibits = () => {
             className="w-full aspect-[1/2] object-cover bg-black"
             src={africanExhibit}
           ></img>
-
           <div className="flex justify-center items-center absolute inset-0 w-full aspect-[1/2] bg-[#00000040] z-10 group">
             <p className="hidden group-hover:block relative text-center text-white font-bold oswald">
               African Exhibit
             </p>
           </div>
           <div className="absolute bottom-5 left-5 p-1 bg-neutral-800 rounded-full">
-            <FaArrowRight fontSize={"1.5rem"} fill="white"></FaArrowRight>
+            <img
+              className="block w-20 aspect-square rounded-full"
+              src={slideIndicator}
+              alt="Slide Indicator"
+            />
           </div>
         </a>
         <a

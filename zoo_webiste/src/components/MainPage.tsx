@@ -1,6 +1,7 @@
 import AboutUs from "./AboutUs";
 import AfricanExhibit from "./AfricanExhibit";
 import AquaticExhibit from "./AquaticExhibit";
+import Footer from "./Footer";
 import MainPageIntro from "./MainPageIntro";
 import NorthernExhibit from "./NorthernExhibit";
 import PrimateExhibit from "./PrimateExhibit";
@@ -20,6 +21,7 @@ const MainPage = () => {
       <AquaticExhibit></AquaticExhibit>
       <WildernessExhibit></WildernessExhibit>
       <NorthernExhibit></NorthernExhibit>
+      <Footer></Footer>
     </div>
   );
 };

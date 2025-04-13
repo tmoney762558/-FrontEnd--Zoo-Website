@@ -4,6 +4,10 @@
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: black;
+}
+
 .oswald {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
