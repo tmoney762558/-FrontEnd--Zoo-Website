@@ -25,7 +25,7 @@ const AboutUs = () => {
     };
   }, []);
   return (
-    <section id="about" className="flex flex-col justify-center items-center relative w-full min-h-[60rem] lg:px-10 md:px-5 px-1 bg-red-400 z-10">
+    <section id="about" className="flex flex-col justify-center items-center relative w-full min-h-[60rem] lg:px-10 md:px-5 px-3 bg-red-400 z-10">
       <img className="absolute w-1/2 max-w-[30rem]" src={lionPawPrint}></img>
       <div
         

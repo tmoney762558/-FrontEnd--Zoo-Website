@@ -7,7 +7,13 @@ import woodsExhibit from "../assets/wildernessExhibit.jpg";
 import northernExhibit from "../assets/northernExhibit.avif";
 import { useEffect, useRef, useState } from "react";
 
-const ZooExhibits = () => {
+const ZooExhibits = ({
+  currentSlide,
+  setCurrentSlide,
+}: {
+  currentSlide: number;
+  setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
+}) => {
   const [animateElement, setAnimateElement] = useState(false);
   const exhibitRef = useRef<HTMLDivElement>(null);
 
@@ -32,16 +38,22 @@ const ZooExhibits = () => {
   }, []);
 
   return (
-    <section className="flex flex-col justify-center items-center w-full h-[80rem] bg-neutral-900 text-xl">
+    <section
+      className={`${
+        currentSlide === -1 ? "flex" : "hidden"
+      } flex-col justify-center items-center w-full lg:h-[60rem] h-[75rem] bg-neutral-900 text-xl`}
+    >
       <div
         className={`${
           animateElement ? "flex slide-in-right-scroll" : "invisible"
         } items-center gap-3 relative w-[90%] max-w-fit h-fit overflow-x-auto`}
         ref={exhibitRef}
       >
-        <a
+        <button
           className="shrink-0 w-[20rem] aspect-[1/2] mb-[6rem] relative slide-top"
-          href="#african"
+          onClick={() => {
+            setCurrentSlide(0);
+          }}
         >
           <img
             className="w-full aspect-[1/2] object-cover bg-black"
@@ -59,10 +71,12 @@ const ZooExhibits = () => {
               alt="Slide Indicator"
             />
           </div>
-        </a>
-        <a
+        </button>
+        <button
           className="shrink-0 w-[20rem] aspect-[1/2] mb-[1rem] relative slide-top"
-          href="#primate"
+          onClick={() => {
+            setCurrentSlide(1);
+          }}
         >
           <img
             className="w-full aspect-[1/2] object-cover bg-black"
@@ -73,10 +87,12 @@ const ZooExhibits = () => {
               Primate Exhibit
             </p>
           </div>
-        </a>
-        <a
+        </button>
+        <button
           className="shrink-0 w-[20rem] aspect-[1/2] mb-[8rem] relative slide-top"
-          href="#reptilian"
+          onClick={() => {
+            setCurrentSlide(2);
+          }}
         >
           <img
             className="w-full aspect-[1/2] object-cover bg-black"
@@ -87,10 +103,12 @@ const ZooExhibits = () => {
               Reptilian Exhibit
             </p>
           </div>
-        </a>
-        <a
+        </button>
+        <button
           className="shrink-0 w-[20rem] aspect-[1/2] mb-[6rem] relative slide-top"
-          href="#aquatic"
+          onClick={() => {
+            setCurrentSlide(3);
+          }}
         >
           <img
             className="w-full aspect-[1/2] object-cover bg-black"
@@ -101,10 +119,12 @@ const ZooExhibits = () => {
               Aquatic Exhibit
             </p>
           </div>
-        </a>
-        <a
+        </button>
+        <button
           className="shrink-0 w-[20rem] aspect-[1/2] mb-[2rem] relative slide-top"
-          href="#wilderness"
+          onClick={() => {
+            setCurrentSlide(4);
+          }}
         >
           <img
             className="w-full aspect-[1/2] object-cover bg-black"
@@ -115,10 +135,12 @@ const ZooExhibits = () => {
               Wilderness Exhibit
             </p>
           </div>
-        </a>
-        <a
+        </button>
+        <button
           className="shrink-0 w-[20rem] aspect-[1/2] mb-[9rem] relative slide-top"
-          href="#northern"
+          onClick={() => {
+            setCurrentSlide(5);
+          }}
         >
           <img
             className="w-full aspect-[1/2] object-cover bg-black"
@@ -129,7 +151,7 @@ const ZooExhibits = () => {
               Northern Exhibit
             </p>
           </div>
-        </a>
+        </button>
       </div>
     </section>
   );

@@ -4,8 +4,8 @@ import { IoLogoFacebook, IoLogoInstagram } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <div className="flex items-center relative w-full h-[25rem] px-5 border-y-[0.5rem] border-white text-white oswald">
-      <div className="flex lg:flex-row flex-col justify-center items-start gap-[10rem] w-full">
+    <div className="flex items-center relative w-full lg:h-[25rem] h-[45rem] px-5 border-y-[0.2rem] border-white text-white oswald">
+      <div className="flex lg:flex-row flex-col justify-center lg:items-start lg:gap-[10rem] gap-[3rem] w-full">
         <div className="flex flex-col items-center">
           <p className="border-b-2 border-white font-bold">Connect With Us</p>
           <a className="flex items-center gap-1">

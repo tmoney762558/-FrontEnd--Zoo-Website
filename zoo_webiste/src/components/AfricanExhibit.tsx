@@ -1,11 +1,31 @@
+import { IoClose } from "react-icons/io5";
 import lionImage from "../assets/lionImage.jpeg";
 
-const AfricanExhibit = () => {
+const AfricanExhibit = ({
+  setCurrentSlide,
+}: {
+  setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
+}) => {
   return (
-    <section className="">
-      <div className="w-full h-3 bg-black"></div>
-      <div id="african" className="flex lg:flex-row flex-col justify-center items-center gap-[5rem] relative w-full lg:h-[60rem] h-[75rem] lg:px-10 md:px-5 px-1 bg-yellow-500 z-10">
-        <img className="lg:w-1/2 w-full aspect-square max-w-[50rem] object-cover rounded-full" src={lionImage}></img>
+    <section className="puff-in-bottom">
+      <div className="flex justify-end items-center w-full p-5 bg-yellow-500">
+        <button
+          className="flex justify-center items-center w-10 aspect-square rounded-full bg-white cursor-pointer"
+          onClick={() => {
+            setCurrentSlide(-1);
+          }}
+        >
+          <IoClose></IoClose>
+        </button>
+      </div>
+      <div
+        id="african"
+        className="flex lg:flex-row flex-col justify-center items-center gap-[5rem] relative w-full lg:h-[60rem] h-[75rem] lg:px-10 md:px-5 px-3 bg-yellow-500 z-10"
+      >
+        <img
+          className="lg:w-1/2 w-[90%] aspect-square max-w-[50rem] object-cover rounded-full"
+          src={lionImage}
+        ></img>
         <div className="flex flex-col items-center">
           <h2 className="w-full lg:text-right text-center lg:text-[5rem] md:text-[4rem] text-[3rem] text-black oswald font-bold">
             African Exhibit
