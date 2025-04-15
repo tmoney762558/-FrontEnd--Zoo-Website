@@ -105,7 +105,7 @@ const ZooExhibits = ({
           </div>
         </button>
         <button
-          className="shrink-0 w-[20rem] aspect-[1/2] mb-[6rem] relative slide-top"
+          className="shrink-0 w-[20rem] aspect-[1/2] mb-[6rem] relative slide-top cursor-pointer"
           onClick={() => {
             setCurrentSlide(3);
           }}
@@ -121,7 +121,7 @@ const ZooExhibits = ({
           </div>
         </button>
         <button
-          className="shrink-0 w-[20rem] aspect-[1/2] mb-[2rem] relative slide-top"
+          className="shrink-0 w-[20rem] aspect-[1/2] mb-[2rem] relative slide-top cursor-pointer"
           onClick={() => {
             setCurrentSlide(4);
           }}
@@ -137,7 +137,7 @@ const ZooExhibits = ({
           </div>
         </button>
         <button
-          className="shrink-0 w-[20rem] aspect-[1/2] mb-[9rem] relative slide-top"
+          className="shrink-0 w-[20rem] aspect-[1/2] mb-[9rem] relative slide-top cursor-pointer"
           onClick={() => {
             setCurrentSlide(5);
           }}

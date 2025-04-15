@@ -9,7 +9,7 @@ const NavBar = () => {
             <li><NavLink to={"./"}><img className="w-[5rem]" src={zooLogo}></img></NavLink></li>
             <li className="lg:flex hidden items-center gap-4">
                 <a href="#animals"><p className="border-b-2 border-transparent hover:border-white cursor-pointer">Animals</p></a>
-                <p className="border-b-2 border-transparent hover:border-white cursor-pointer">Donations</p>
+                <a className="border-b-2 border-transparent hover:border-white cursor-pointer" href="#donations">Donations</a>
                 <p className="py-1 px-5 border-2 border-white cursor-pointer">Plan Your Visit!</p>
             </li>
         </ul>
